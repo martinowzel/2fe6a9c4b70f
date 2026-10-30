@@ -1,0 +1,242 @@
+{
+  "generated": "2026-10-30T07:12:47.764634+00:00",
+  "note": "Subset of NVD JSON 2.0 records. Descriptions are quoted from NVD. PS4 applicability is not asserted unless explicitly stated.",
+  "cves": [
+    {
+      "id": "CVE-2026-49415",
+      "published": "2026-08-19T05:17:03.830",
+      "status": "Analyzed",
+      "descriptions": [
+        {
+          "lang": "en",
+          "value": "During execve(2) of a SUID binary, the new virtual address space is installed before the process credentials are updated.  During this window, a process running as the same user can access the target process's memory via procfs or linprocfs, because the kernel's debugging permission check still saw the original credentials.\n\nAn unprivileged local user can exploit this race to modify the address space of a SUID binary before its credentials are elevated, potentially gaining full control of the affected system."
+        }
+      ],
+      "metrics": {
+        "cvssMetricV31": [
+          {
+            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+            "type": "Secondary",
+            "cvssData": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "baseScore": 8.8,
+              "baseSeverity": "HIGH",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 5.9
+          }
+        ],
+        "ssvcV203": [
+          {
+            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+            "ssvcData": {
+              "timestamp": "2026-08-20T03:56:02.886001Z",
+              "id": "CVE-2026-49415",
+              "options": [
+                {
+                  "exploitation": "none"
+                },
+                {
+                  "automatable": "no"
+                },
+                {
+                  "technicalImpact": "total"
+                }
+              ],
+              "role": "CISA Coordinator",
+              "version": "2.0.3"
+            }
+          }
+        ]
+      },
+      "ps4_note": "applicability to Orbis OS/PS4 requires source-level verification; do not assume from the FreeBSD version alone"
+    },
+    {
+      "id": "CVE-2026-101308",
+      "published": "2026-10-15T07:17:58.007",
+      "status": "Analyzed",
+      "descriptions": [
+        {
+          "lang": "en",
+          "value": "When an audio channel's buffer needs to be resized, the sound(4) driver checks that the buffer is not memory-mapped and then drops the channel lock to allocate a new buffer.  An mmap(2) call on another thread can complete during this window, after which the resize path frees the now-mapped buffer without rechecking.\n\nAn unprivileged local user with access to a sound device can exploit this race to trigger a use-after-free in the kernel, potentially escalating privileges."
+        }
+      ],
+      "metrics": {
+        "cvssMetricV31": [
+          {
+            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+            "type": "Secondary",
+            "cvssData": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          }
+        ],
+        "ssvcV203": [
+          {
+            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+            "ssvcData": {
+              "timestamp": "2026-10-15T15:40:09.578920Z",
+              "id": "CVE-2026-101308",
+              "options": [
+                {
+                  "exploitation": "none"
+                },
+                {
+                  "automatable": "no"
+                },
+                {
+                  "technicalImpact": "partial"
+                }
+              ],
+              "role": "CISA Coordinator",
+              "version": "2.0.3"
+            }
+          }
+        ]
+      },
+      "ps4_note": "applicability to Orbis OS/PS4 requires source-level verification; do not assume from the FreeBSD version alone"
+    },
+    {
+      "id": "CVE-2026-58087",
+      "published": "2026-08-19T08:17:12.877",
+      "status": "Analyzed",
+      "descriptions": [
+        {
+          "lang": "en",
+          "value": "The GETALL and SETALL commands in semctl(2) recorded the number of semaphores in the target set, dropped the lock protecting the set, allocated a buffer sized for that count, and reacquired the lock.  A sequence-number check was used to verify that the set had not been replaced in the interim, but the sequence number wraps after 0x8000 create/destroy cycles.  By rapidly destroying and recreating semaphore sets at the same index, another process can cause the sequence number to wrap, allowing a set with a different number of semaphores to pass validation.  The subsequent copy then reads or writes past the end of the allocated buffer.\n\nAn unprivileged local user can trigger out-of-bounds reads and writes on kernel heap memory, potentially leading to privilege escalation."
+        },
+        {
+          "lang": "es",
+          "value": "Los comandos GETALL y SETALL en semctl(2) registraron el número de semáforos en el conjunto objetivo, liberaron el bloqueo que protegía el conjunto, asignaron un búfer dimensionado para esa cantidad y volvieron a adquirir el bloqueo. Se utilizó una verificación de número de secuencia para verificar que el conjunto no había sido reemplazado en el ínterin, pero el número de secuencia se reinicia después de 0x8000 ciclos de creación/destrucción. Al destruir y recrear rápidamente conjuntos de semáforos en el mismo índice, otro proceso puede hacer que el número de secuencia se reinicie, permitiendo que un conjunto con un número diferente de semáforos pase la validación. La copia subsiguiente entonces lee o escribe más allá del final del búfer asignado.\n\nUn usuario local sin privilegios puede desencadenar lecturas y escrituras fuera de límites en la memoria del heap del kernel, lo que podría conducir a una escalada de privilegios."
+        }
+      ],
+      "metrics": {
+        "cvssMetricV31": [
+          {
+            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+            "type": "Secondary",
+            "cvssData": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          }
+        ],
+        "ssvcV203": [
+          {
+            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+            "ssvcData": {
+              "timestamp": "2026-08-19T00:00:00+00:00",
+              "id": "CVE-2026-58087",
+              "options": [
+                {
+                  "exploitation": "none"
+                },
+                {
+                  "automatable": "no"
+                },
+                {
+                  "technicalImpact": "total"
+                }
+              ],
+              "role": "CISA Coordinator",
+              "version": "2.0.3"
+            }
+          }
+        ]
+      },
+      "ps4_note": "applicability to Orbis OS/PS4 requires source-level verification; do not assume from the FreeBSD version alone"
+    },
+    {
+      "id": "CVE-2026-7270",
+      "published": "2026-04-30T07:16:41.710",
+      "status": "Modified",
+      "descriptions": [
+        {
+          "lang": "en",
+          "value": "An operator precedence bug in the kernel results in a scenario where a buffer overflow causes attacker-controlled data to overwrite adjacent execve(2) argument buffers.\n\nThe bug may be exploitable by an unprivileged user to obtain superuser privileges."
+        }
+      ],
+      "metrics": {
+        "cvssMetricV31": [
+          {
+            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+            "type": "Secondary",
+            "cvssData": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          }
+        ],
+        "ssvcV203": [
+          {
+            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+            "ssvcData": {
+              "timestamp": "2026-04-30T00:00:00+00:00",
+              "id": "CVE-2026-7270",
+              "options": [
+                {
+                  "exploitation": "none"
+                },
+                {
+                  "automatable": "no"
+                },
+                {
+                  "technicalImpact": "total"
+                }
+              ],
+              "role": "CISA Coordinator",
+              "version": "2.0.3"
+            }
+          }
+        ]
+      },
+      "ps4_note": "applicability to Orbis OS/PS4 requires source-level verification; do not assume from the FreeBSD version alone"
+    }
+  ]
+}

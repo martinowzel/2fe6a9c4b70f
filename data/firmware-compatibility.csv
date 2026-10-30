@@ -1,0 +1,26 @@
+firmware,standalone_disc_bdj,bdj_variant,kernel_exploit,practical_tool,status,confidence,notes,sources
+9.00,yes,"BD-JB1 / BD-JB3",Lapse,"HENloader LP 1.0 / Lapse.iso 1.2",supported,high,"HENloader Lapse range 9.00-12.02; AIO fixes in 1.2+",S10;S11;S14;S16
+9.03,yes,"BD-JB1 / BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"Same Lapse range as 9.00",S10;S11;S14;S16
+9.04,yes,"BD-JB1 / BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"Same Lapse range as 9.00",S10;S11;S14;S16
+9.50,yes,"BD-JB1 / BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"AIO fixes included; old Lapse versions need aiofix_network.elf",S10;S11;S14;S16
+9.51,yes,"BD-JB1 / BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"AIO fixes included",S10;S11;S14;S16
+9.60,yes,"BD-JB1 / BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"AIO fixes included",S10;S11;S14;S16
+10.00,yes,"BD-JB2 / BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"HENloader kernel offsets include 10.00",S10;S11;S14;S16
+10.01,yes,"BD-JB2 / BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"Same offsets as 10.00",S10;S11;S14;S16
+10.50,yes,"BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"AIO fixes included",S10;S11;S14;S16
+10.70,yes,"BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"Same offsets as 10.50",S10;S11;S14;S16
+10.71,yes,"BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"Same offsets as 10.50",S10;S11;S14;S16
+11.00,yes,"BD-JB3",Lapse,"HENloader LP 1.0",supported,high,"AIO fixes included",S10;S11;S14;S16
+11.02,yes,"BD-JB3",Lapse,"HENloader LP 1.0",supported,medium,"ConsoleMods chart lists Lapse/Poops only; HENloader source includes 11.02 offsets",S10;S11;S14;S16
+11.50,yes,"BD-JB3.2",Lapse,"HENloader LP 1.0",supported,high,"AIO fixes included",S10;S11;S14;S16
+11.52,yes,"BD-JB3.2",Lapse,"HENloader LP 1.0",supported,high,"Same offsets as 11.50",S10;S11;S14;S16
+12.00,yes,"BD-JB3.2",Lapse,"HENloader LP 1.0",supported,high,"AIO fixes included",S10;S11;S14;S16
+12.02,yes,"BD-JB3.2",Lapse,"HENloader LP 1.0 / Lapse.iso 1.2",supported,high,"Most stable Lapse target; last version before Lapse patch",S10;S11;S14;S16
+12.50,yes,"BD-JB3.2",Poopsploit,"HENloader LP 1.0 / DefKorns Poops.iso",supported,high,"Lapse patched at 12.50; use Poops",S10;S11;S14;S19
+12.52,yes,"BD-JB3.2",Poopsploit,"HENloader LP 1.0 / DefKorns Poops.iso",supported,high,"Poops supports 12.02-12.52; last practical disc BD-JB firmware",S10;S11;S14;S19
+13.00,partial,"BD-JB-13.00 (CVE-2025-64390)","Poopsploit (<=13.00)","ps3120 Lapse_1.2_Mod ISO",experimental,medium,"Research ISO for 13.00/13.02; Poops kernel works up to 13.00",S10;S18;S06;S07
+13.02,partial,"BD-JB-13.00 (CVE-2025-64390)","Poops patched; Relapse (community-reported)","ps3120 Lapse_1.2_Mod ISO + kernel",research,low,"Kernel support for 13.02 is community-reported; verify before use",S10;S11;S18;S06;S07
+13.04,yes,"BD-JB-13.04","Relapse / Celsius (community-reported)","bdj1304.iso",research,medium,"Reintroduced path traversal; patched in 13.50; last disc-based BD-JB firmware",S10;S11;S21;S22;S36
+13.50,no,"BD-JB-13.04 patched; BD-JB-EX only with prior injection","WebKit-based (community)","WebKit + GoldHEN 2.4b18.12",advanced,low,"Disc BD-JB blocked; BD-JB-EX requires persistent JAR injected while an older kernel exploit was available",S10;S11;S39;S30
+13.52,no,"BD-JB-13.04 patched; BD-JB-EX only with prior injection","WebKit-based (community)","WebKit + GoldHEN 2.4b18.11/12",advanced,low,"No standalone disc BD-JB; do not update",S10;S11;S39;S30
+14.00,no,"none public; community browser userland-only research","none public; candidate CVEs unproven","13.52 PUP decrypt + WebKit research","unsupported",high,"No public full jailbreak; private/teaser reports only; community reports browser R/W/ROP/syscalls but no sandbox escape/KEX; 14.10 is PS5",S10;S11;S58;S59;S60;S63;S64;S65

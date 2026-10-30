@@ -1,0 +1,231 @@
+{
+  "firmware": "14.00",
+  "release_date": "2026-09-16",
+  "snapshot_date": "2026-10-30",
+  "latest_ps4_firmware": "14.00",
+  "clarification_1410": "PS5 firmware 26.06-14.10.00 (2026-10-01) is not a PS4 firmware; do not confuse 14.10 with PS4 14.00.",
+  "public_full_jailbreak": false,
+  "private_teaser_reported": true,
+  "summary": "Community research reports a working browser userland chain on PS4 14.00, but no public sandbox escape or kernel primitive. A 14.00 PUP can be decrypted with a 13.52 jailbroken console. The missing link is a public/reproducible kernel primitive.",
+  "layers": [
+    {
+      "layer": "WebKit browser userland",
+      "status": "community-reported working (R/W, base leak, ROP, syscalls)",
+      "confidence": "medium (independent community reports; not audited by this project)",
+      "sources": [
+        "S58",
+        "S59",
+        "S60"
+      ]
+    },
+    {
+      "layer": "Browser sandbox escape",
+      "status": "not publicly demonstrated",
+      "confidence": "high",
+      "sources": [
+        "S58",
+        "S59",
+        "S60"
+      ]
+    },
+    {
+      "layer": "Kernel primitive / KEX",
+      "status": "not publicly demonstrated; public AIO wait path gated on 14.00; candidates unproven",
+      "confidence": "high for no public KEX; candidate applicability unknown",
+      "sources": [
+        "S58",
+        "S59",
+        "S60",
+        "S63",
+        "S64",
+        "S65"
+      ]
+    },
+    {
+      "layer": "Full jailbreak",
+      "status": "not public; private/teaser reports only",
+      "confidence": "high",
+      "sources": [
+        "S11",
+        "S58",
+        "S59",
+        "S60",
+        "S67"
+      ]
+    },
+    {
+      "layer": "PUP decryption / static analysis",
+      "status": "possible with a 13.52 jailbroken console; tested 14.00 recovery PUP on 13.52 (~17.5 min)",
+      "confidence": "medium-high",
+      "sources": [
+        "S52",
+        "S53",
+        "S54",
+        "S55"
+      ]
+    },
+    {
+      "layer": "14.00 kernel offsets / kpatches",
+      "status": "public post-exploitation sources exist; no public KEX",
+      "confidence": "high for existence; verify offsets",
+      "sources": [
+        "S57",
+        "S29"
+      ]
+    },
+    {
+      "layer": "BD-JB cold start",
+      "status": "no public 14.00 route; BD-JB-13.04 patched at 13.50; BD-JB-EX needs prior injection",
+      "confidence": "high",
+      "sources": [
+        "S10",
+        "S11",
+        "S12"
+      ]
+    }
+  ],
+  "kernel_candidates": [
+    {
+      "cve": "CVE-2026-49415",
+      "subsystem": "execve(2) SUID TOCTOU",
+      "cvss": 8.8,
+      "ps4_status": "candidate; requires SUID binary and procfs reachability; applicability to FreeBSD 9-derived PS4 kernel needs verification",
+      "source": "S63"
+    },
+    {
+      "cve": "CVE-2026-101308",
+      "subsystem": "sound(4) sndbuf_resize / mmap UAF",
+      "cvss": 5.5,
+      "ps4_status": "candidate; requires sound device reachability and heap control",
+      "source": "S64"
+    },
+    {
+      "cve": "CVE-2026-58087",
+      "subsystem": "semctl(2) GETALL/SETALL sequence wrap OOB",
+      "cvss": 7.8,
+      "ps4_status": "candidate; requires SysV semaphore reachability; browser gating unknown",
+      "source": "S65"
+    },
+    {
+      "cve": "CVE-2026-7270",
+      "subsystem": "execve argument slab overflow",
+      "cvss": null,
+      "ps4_status": "disputed/discarded for PS4: function introduced in FreeBSD 13, not in the FreeBSD 9 baseline; do not rely",
+      "source": "S66"
+    }
+  ],
+  "open_leads": [
+    {
+      "name": "AIO multi_delete TOCTOU (Lapse family)",
+      "status": "open; delete 662 alive; wait 663 gated; lock-upgrade window",
+      "risk": "kernel panic on a lost race",
+      "source": "S58"
+    },
+    {
+      "name": "bnet raise UAF",
+      "status": "entry chain proven on 14.00; race probability low",
+      "risk": "panic; wedged netevent slots",
+      "source": "S58"
+    },
+    {
+      "name": "/dev/dipsw ioctl",
+      "status": "open fd from browser; ioctl untested; command window reported",
+      "risk": "unknown device semantics; avoid blind sweeps",
+      "source": "S58"
+    },
+    {
+      "name": "Named IPC registry / confused deputy",
+      "status": "kernel registry unauthenticated; browser gated at syscall entry",
+      "risk": "complex; needs a non-gated system process",
+      "source": "S58"
+    },
+    {
+      "name": "/system_tmp sockets",
+      "status": "live UNIX sockets visible from browser prison; protocol unknown",
+      "risk": "unknown; measure connect/stat first",
+      "source": "S58"
+    },
+    {
+      "name": "Remote Play parsers (NPXS21006)",
+      "status": "UDP 987 / TCP 9295 reachable; 576 fuzz cases no crash; ctrl needs PIN mode",
+      "risk": "network service; crash risk",
+      "source": "S58"
+    },
+    {
+      "name": "Untested syscall families",
+      "status": "572 virtual_query, 482 shm_open, 657 blockpool_batch, 533/534 jitshm",
+      "risk": "bounded probes; one per session",
+      "source": "S58"
+    }
+  ],
+  "closed_leads": [
+    "Public Lapse/AIO wait chain on 14.00 (aio_multi_wait 663 gated)",
+    "Celsius ffs_mount (patched at 13.50)",
+    "CSSFontFace primitive above PS4 11.02 (WebKit redesign)",
+    "evf/osem creation from the browser class",
+    "dmem0/dce/aout opens from the browser class",
+    "CVE-2026-7270 as a PS4 candidate (code not in FreeBSD 9 baseline)",
+    "Fake 14.00 offset/jailbreak repositories and teaser-only claims"
+  ],
+  "tools": [
+    {
+      "name": "PupDecrypt-PS4",
+      "purpose": "decrypt 14.00 PUP on a jailbroken console",
+      "source": "S52"
+    },
+    {
+      "name": "ps4-pup-decrypt",
+      "purpose": "upstream PUP decrypt payload",
+      "source": "S53"
+    },
+    {
+      "name": "ps4-pup_unpack",
+      "purpose": "unpack decrypted PUP parts",
+      "source": "S55"
+    },
+    {
+      "name": "ps4-exploit-kpatches",
+      "purpose": "14.00 kernel patch shellcode/reference",
+      "source": "S57"
+    },
+    {
+      "name": "ps4-hen (Scene-Collective)",
+      "purpose": "HEN and 14.00 offset headers",
+      "source": "S29"
+    },
+    {
+      "name": "GoldHEN",
+      "purpose": "BinLoader/klog/tooling on the 13.52 console",
+      "source": "S27"
+    }
+  ],
+  "sources": [
+    "S11",
+    "S29",
+    "S49",
+    "S50",
+    "S51",
+    "S52",
+    "S53",
+    "S54",
+    "S55",
+    "S56",
+    "S57",
+    "S58",
+    "S59",
+    "S60",
+    "S61",
+    "S62",
+    "S63",
+    "S64",
+    "S65",
+    "S66",
+    "S67",
+    "S68",
+    "S69",
+    "S70",
+    "S71",
+    "S72",
+    "S73"
+  ]
+}

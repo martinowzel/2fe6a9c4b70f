@@ -1,0 +1,645 @@
+{
+  "project": "PS4 Blu-ray Jailbreak (BD-JB) — documentation project",
+  "accessed": "2026-10-30",
+  "trust_levels": {
+    "primary": "Official source, exploit disclosure, CVE or upstream repository",
+    "wiki": "Community-maintained technical wiki/chart",
+    "release": "Public release or tool repository",
+    "community": "Forum/Reddit/YouTube/X — secondary, verify independently",
+    "research": "Research tool or unverified claim — use with caution"
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "TheOfficialFloW/bd-jb",
+      "url": "https://github.com/TheOfficialFloW/bd-jb",
+      "type": "primary",
+      "publisher": "TheFloW",
+      "notes": "Reference BD-JB source: Exploit.java, Payload.java, Loader.java, sandbox implementations."
+    },
+    {
+      "id": "S02",
+      "title": "bd-jb: Blu-ray Disc Java Sandbox Escape — hardwear.io 2022 slides",
+      "url": "https://github.com/TheOfficialFloW/Presentations/blob/master/2022-hardwear-io-bd-jb.pdf",
+      "type": "primary",
+      "publisher": "TheFloW",
+      "published": "2022-06-10",
+      "notes": "BD-JB1/BD-JB2 technical details; pages 27-28 cover path traversal."
+    },
+    {
+      "id": "S03",
+      "title": "HackerOne report 1379975 (BD-JB)",
+      "url": "https://hackerone.com/reports/1379975",
+      "type": "primary",
+      "publisher": "HackerOne / TheFloW",
+      "published": "2022-06-10",
+      "notes": "Original BD-JB disclosure."
+    },
+    {
+      "id": "S04",
+      "title": "HackerOne report 3104356 (Ixc)",
+      "url": "https://hackerone.com/reports/3104356",
+      "type": "primary",
+      "publisher": "HackerOne / TheFloW",
+      "published": "2025-04-22",
+      "notes": "Two Ixc implementations; basis for BD-JB3."
+    },
+    {
+      "id": "S05",
+      "title": "HackerOne report 3320669 (sys_netcontrol double fdrop)",
+      "url": "https://hackerone.com/reports/3320669",
+      "type": "primary",
+      "publisher": "HackerOne / slidybat",
+      "published": "2025-08-30",
+      "notes": "Poopsploit kernel vulnerability; disclosed 2026-05-01."
+    },
+    {
+      "id": "S06",
+      "title": "HackerOne report 3452696 (CVE-2025-64390)",
+      "url": "https://hackerone.com/reports/3452696",
+      "type": "primary",
+      "publisher": "HackerOne / Gezine",
+      "published": "2025-12-05",
+      "notes": "BD-JB-13.00 nested JAR path traversal; disclosed 2026-04-29."
+    },
+    {
+      "id": "S07",
+      "title": "NVD — CVE-2025-64390",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-64390",
+      "type": "primary",
+      "publisher": "NIST",
+      "published": "2026-06-02",
+      "notes": "Official CVE record."
+    },
+    {
+      "id": "S08",
+      "title": "TheFloW — ExploitNetControlImpl.java (Poopsploit gist)",
+      "url": "https://gist.github.com/TheOfficialFloW/7174351201b5260d7780780f4059bebf",
+      "type": "primary",
+      "publisher": "TheFloW",
+      "published": "2025-11-02",
+      "notes": "Public Poopsploit implementation chained with BD-JB3 (PS4) / BD-JB2 (PS5)."
+    },
+    {
+      "id": "S09",
+      "title": "CTurt/FreeDVDBoot",
+      "url": "https://github.com/CTurt/FreeDVDBoot",
+      "type": "primary",
+      "publisher": "CTurt",
+      "notes": "Context: early BD-J hacking idea."
+    },
+    {
+      "id": "S10",
+      "title": "PSDevWiki — Vulnerabilities",
+      "url": "https://www.psdevwiki.com/ps4/Vulnerabilities",
+      "archive_url": "https://web.archive.org/web/20260710164118/https://www.psdevwiki.com/ps4/Vulnerabilities",
+      "type": "wiki",
+      "publisher": "PSDevWiki",
+      "notes": "Most detailed technical reference for BD-JB variants, Lapse, Poopsploit, Celsius, firmware ranges."
+    },
+    {
+      "id": "S11",
+      "title": "ConsoleMods — PS4:Exploit Chart",
+      "url": "https://consolemods.org/wiki/PS4:Exploit_Chart",
+      "archive_url": "https://web.archive.org/web/20261020125155/https://consolemods.org/wiki/PS4:Exploit_Chart",
+      "type": "wiki",
+      "publisher": "ConsoleMods",
+      "published": "2026-10-17",
+      "notes": "Firmware compatibility matrix; archived 2026-10-20."
+    },
+    {
+      "id": "S12",
+      "title": "ConsoleMods — PS4:BD-JB",
+      "url": "https://consolemods.org/wiki/PS4:BD-JB",
+      "archive_url": "https://web.archive.org/web/20260724075552/https://consolemods.org/wiki/PS4:BD-JB",
+      "type": "wiki",
+      "publisher": "ConsoleMods",
+      "published": "2026-03-20",
+      "notes": "Step-by-step Henloader/Lapse guide, HDCP/BD-LIVE, errors."
+    },
+    {
+      "id": "S13",
+      "title": "HENloader LP guide",
+      "url": "https://iaceene.github.io/HENloader/",
+      "type": "release",
+      "publisher": "Yassine Ajagrou / community",
+      "notes": "Simplified HENloader guide."
+    },
+    {
+      "id": "S14",
+      "title": "GoldHEN/henloader_lp",
+      "url": "https://github.com/GoldHEN/henloader_lp",
+      "type": "release",
+      "publisher": "GoldHEN org / community",
+      "notes": "AIO: Lapse 9.00-12.02 + Poops 9.00-12.52 + GoldHEN 2.4b18.7."
+    },
+    {
+      "id": "S15",
+      "title": "HENloader LP 1.0 release",
+      "url": "https://github.com/GoldHEN/henloader_lp/releases/tag/1.0",
+      "type": "release",
+      "publisher": "GoldHEN org / community",
+      "published": "2025-11-24",
+      "notes": "Official release page."
+    },
+    {
+      "id": "S16",
+      "title": "iaceene/HENloader_Source",
+      "url": "https://github.com/iaceene/HENloader_Source",
+      "type": "release",
+      "publisher": "iaceene",
+      "notes": "Source: Lapse.java, Poops.java, KernelOffset.java, InitXlet.java."
+    },
+    {
+      "id": "S17",
+      "title": "ps3120/BD-JB-1250",
+      "url": "https://github.com/ps3120/BD-JB-1250",
+      "type": "release",
+      "publisher": "ps3120 (fork of Gezine/BD-JB-1250)",
+      "notes": "Active fork; BD-JB3.2, AIO, 13.00/13.02 research ISO tag."
+    },
+    {
+      "id": "S18",
+      "title": "ps3120 — Lapse_1.2_Mod release",
+      "url": "https://github.com/ps3120/BD-JB-1250/releases/tag/Lapse_1.2_Mod",
+      "type": "release",
+      "publisher": "ps3120",
+      "published": "2026-05-30",
+      "notes": "ISO for PS4 13.00/13.02 (research)."
+    },
+    {
+      "id": "S19",
+      "title": "DefKorns/BD-JB-1252",
+      "url": "https://github.com/DefKorns/BD-JB-1252",
+      "type": "release",
+      "publisher": "DefKorns",
+      "notes": "Poops.iso for PS4 12.50-12.52; MIT license."
+    },
+    {
+      "id": "S20",
+      "title": "ayasns/BD-JB-1250",
+      "url": "https://github.com/ayasns/BD-JB-1250",
+      "type": "release",
+      "publisher": "ayasns",
+      "notes": "Mirror/fork of BD-JB-1250."
+    },
+    {
+      "id": "S21",
+      "title": "ps3120/ps3120.github.io",
+      "url": "https://github.com/ps3120/ps3120.github.io",
+      "type": "release",
+      "publisher": "ps3120",
+      "notes": "Contains bdj1304.iso and related files."
+    },
+    {
+      "id": "S22",
+      "title": "bdj1304.iso",
+      "url": "https://github.com/ps3120/ps3120.github.io/blob/main/bdj1304.iso",
+      "type": "release",
+      "publisher": "ps3120",
+      "notes": "BD-JB-13.04 ISO (16 MB); research use."
+    },
+    {
+      "id": "S23",
+      "title": "kimariin/BlueLoader",
+      "url": "https://github.com/kimariin/BlueLoader",
+      "type": "release",
+      "publisher": "kimariin",
+      "notes": "Alternative JAR loader; ports 9020/9025/9030; marked obsolete."
+    },
+    {
+      "id": "S24",
+      "title": "john-tornblom/bdj-sdk",
+      "url": "https://github.com/john-tornblom/bdj-sdk",
+      "type": "release",
+      "publisher": "John Tornblom",
+      "notes": "Build BD-J ISOs on Linux; makefs; JDK 8/11."
+    },
+    {
+      "id": "S25",
+      "title": "ps4-payload-dev/sdk",
+      "url": "https://github.com/ps4-payload-dev/sdk",
+      "type": "release",
+      "publisher": "ps4-payload-dev",
+      "notes": "PS4 payload SDK."
+    },
+    {
+      "id": "S26",
+      "title": "ps3120/henloader_lp",
+      "url": "https://github.com/ps3120/henloader_lp",
+      "type": "release",
+      "publisher": "ps3120",
+      "notes": "Fork/update of HENloader."
+    },
+    {
+      "id": "S27",
+      "title": "GoldHEN/GoldHEN",
+      "url": "https://github.com/GoldHEN/GoldHEN",
+      "type": "release",
+      "publisher": "GoldHEN team",
+      "notes": "Official GoldHEN repository; features and ports."
+    },
+    {
+      "id": "S28",
+      "title": "GoldHEN 2.4b18 release",
+      "url": "https://github.com/GoldHEN/GoldHEN/releases/tag/2.4b18",
+      "type": "release",
+      "publisher": "GoldHEN team",
+      "published": "2024-10-28",
+      "notes": "Official GitHub release."
+    },
+    {
+      "id": "S29",
+      "title": "Scene-Collective/ps4-hen",
+      "url": "https://github.com/Scene-Collective/ps4-hen",
+      "type": "release",
+      "publisher": "Scene-Collective",
+      "notes": "Alternative HEN; README states support 5.05-12.02."
+    },
+    {
+      "id": "S30",
+      "title": "Reddit — GoldHEN v2.4b18.12 (13.xx support)",
+      "url": "https://www.reddit.com/r/ps4homebrew/comments/1wmhxjd/goldhen_v24b1812_13xx_support/",
+      "type": "community",
+      "publisher": "r/ps4homebrew",
+      "notes": "Reports 13.02/13.04/13.50 support; secondary source."
+    },
+    {
+      "id": "S31",
+      "title": "YouTube — GoldHEN 2.4b18.12 released",
+      "url": "https://www.youtube.com/watch?v=8f6_EV8y0ak",
+      "type": "community",
+      "publisher": "YouTube",
+      "notes": "Secondary report of 13.02-13.52 support."
+    },
+    {
+      "id": "S32",
+      "title": "iMrDJAi/laps3c0re",
+      "url": "https://github.com/iMrDJAi/laps3c0re",
+      "type": "release",
+      "publisher": "iMrDJAi",
+      "notes": "Lapse + mast1c0re; notes on 12.50/12.52/13.00/13.02."
+    },
+    {
+      "id": "S33",
+      "title": "Al-Azif/psfree-lapse",
+      "url": "https://github.com/Al-Azif/psfree-lapse",
+      "type": "release",
+      "publisher": "Al-Azif",
+      "notes": "PSFree + Lapse for PS4 7.00-9.60."
+    },
+    {
+      "id": "S34",
+      "title": "kmeps4/PSFree",
+      "url": "https://github.com/kmeps4/PSFree",
+      "type": "release",
+      "publisher": "kmeps4",
+      "notes": "PSFree + Lapse for 9.00."
+    },
+    {
+      "id": "S35",
+      "title": "shahrilnet/remote_lua_loader",
+      "url": "https://github.com/shahrilnet/remote_lua_loader",
+      "type": "release",
+      "publisher": "shahrilnet",
+      "notes": "Lua Loader + Lapse chain."
+    },
+    {
+      "id": "S36",
+      "title": "adri22235/ps4-suid-scanner",
+      "url": "https://github.com/adri22235/ps4-suid-scanner",
+      "type": "research",
+      "publisher": "adri22235",
+      "notes": "Research tool claiming 13.04 BD-JB/Celsius; unverified claims."
+    },
+    {
+      "id": "S37",
+      "title": "Reddit — BD-J+Lapse release 9.00-12.02",
+      "url": "https://www.reddit.com/r/ps4homebrew/comments/1mox09r/bdjlapse_jailbreak_release_9001202/",
+      "type": "community",
+      "publisher": "r/ps4homebrew",
+      "published": "2025-08",
+      "notes": "Gezine release discussion."
+    },
+    {
+      "id": "S38",
+      "title": "Reddit — A new PS4 BD-JB up to 13.02 by Gezine",
+      "url": "https://www.reddit.com/r/ps4homebrew/comments/1pepyqj/a_new_ps4_bdjb_that_works_up_to_1302_by_gezine/",
+      "type": "community",
+      "publisher": "r/ps4homebrew",
+      "published": "2025-12",
+      "notes": "13.02 userland release discussion; HackerOne context."
+    },
+    {
+      "id": "S39",
+      "title": "Reddit — Do not update to 13.50 (userland exploit patched)",
+      "url": "https://www.reddit.com/r/ps4homebrew/comments/1rwjnxw/warning_do_not_update_to_1350_userland_exploit/",
+      "type": "community",
+      "publisher": "r/ps4homebrew",
+      "published": "2026",
+      "notes": "Warning about 13.50 security update."
+    },
+    {
+      "id": "S40",
+      "title": "PSX-Place — BD-JB-1250 thread",
+      "url": "https://www.psx-place.com/threads/bd-jb-1250-new-exploit-bluray-for-playstation-4-supporting-upto-12-50-firmware-from-gezine.48161/",
+      "type": "community",
+      "publisher": "PSX-Place",
+      "published": "2025-08-04",
+      "notes": "News thread for BD-JB-1250."
+    },
+    {
+      "id": "S41",
+      "title": "YouTube — bd-jb: Blu-ray Disc Java Sandbox Escape",
+      "url": "https://www.youtube.com/watch?v=jyyCOoWksbg",
+      "type": "community",
+      "publisher": "hardwear.io / TheFloW",
+      "published": "2022",
+      "notes": "Talk recording; secondary to slides."
+    },
+    {
+      "id": "S42",
+      "title": "X — TheFloW on BD-JB affecting PS3/PS4/PS5",
+      "url": "https://x.com/theflow0/status/1535361317535506432",
+      "type": "community",
+      "publisher": "X / TheFloW",
+      "published": "2022-06-10",
+      "notes": "Announcement."
+    },
+    {
+      "id": "S43",
+      "title": "X — Gezine on CVE-2025-64390 report",
+      "url": "https://x.com/gezine_dev/status/1996799464552755543",
+      "type": "community",
+      "publisher": "X / Gezine",
+      "published": "2025-12",
+      "notes": "HackerOne disclosure context."
+    },
+    {
+      "id": "S44",
+      "title": "X — zecoxao diff 13.04/13.02",
+      "url": "https://x.com/notnotzecoxao/status/2016436488800448685",
+      "type": "community",
+      "publisher": "X / zecoxao",
+      "published": "2026-01",
+      "notes": "Technical diff context for BD-JB-13.04."
+    },
+    {
+      "id": "S45",
+      "title": "Gezine/BD-JB5 (PS5)",
+      "url": "https://github.com/Gezine/BD-JB5",
+      "type": "release",
+      "publisher": "Gezine",
+      "notes": "PS5-only; BD-JB up to 13.42, bdj_unpatch for 13.60+."
+    },
+    {
+      "id": "S46",
+      "title": "ImgBurn",
+      "url": "https://www.imgburn.com",
+      "type": "community",
+      "publisher": "ImgBurn",
+      "notes": "Windows optical disc burning software."
+    },
+    {
+      "id": "S47",
+      "title": "K3b",
+      "url": "https://apps.kde.org/k3b",
+      "type": "community",
+      "publisher": "KDE",
+      "notes": "Linux disc burning software."
+    },
+    {
+      "id": "S48",
+      "title": "BD-SimpleBurn",
+      "url": "https://github.com/C4ndyF1sh/BD-SimpleBurn",
+      "type": "release",
+      "publisher": "C4ndyF1sh",
+      "notes": "macOS Blu-ray burning tool."
+    },
+    {
+      "id": "S49",
+      "title": "Sony — PS4 system software support",
+      "url": "https://www.playstation.com/en-us/support/hardware/ps4/system-software/",
+      "type": "primary",
+      "publisher": "Sony Interactive Entertainment",
+      "notes": "Official PS4 update/PUP page; 14.00 PUP path dated 2026_0831.",
+      "local_copy": "web/sony-ps4-system-software.html"
+    },
+    {
+      "id": "S50",
+      "title": "Sony — PS4 WebKit OSS source page",
+      "url": "https://www.playstation.com/en-us/oss/ps4/webkit/",
+      "type": "primary",
+      "publisher": "Sony Interactive Entertainment",
+      "notes": "Last PS4 WebKit source drop listed is 13.00-; no 13.50/13.52/14.00 archive.",
+      "local_copy": "web/sony-ps4-webkit-oss.html"
+    },
+    {
+      "id": "S51",
+      "title": "MP1ST — PS4 Update 14.00 released on September 16",
+      "url": "https://mp1st.com/news/ps4-update-14-00-released-on-september-16-brings-what-you-expect",
+      "type": "community",
+      "publisher": "MP1ST",
+      "notes": "Release date and minimal notes; secondary.",
+      "published": "2026-09-16"
+    },
+    {
+      "id": "S52",
+      "title": "iHaiDeeZ/PupDecrypt-PS4",
+      "url": "https://github.com/iHaiDeeZ/PupDecrypt-PS4",
+      "type": "release",
+      "publisher": "iHaiDeeZ",
+      "notes": "PUP decrypt payload with offsets up to 14.00; tested 14.00 recovery PUP on 13.52 GoldHEN (~17.5 min).",
+      "local_copy": "repos/iHaiDeeZ-PupDecrypt-PS4"
+    },
+    {
+      "id": "S53",
+      "title": "Scene-Collective/ps4-pup-decrypt",
+      "url": "https://github.com/Scene-Collective/ps4-pup-decrypt",
+      "type": "release",
+      "publisher": "Scene-Collective",
+      "notes": "Upstream PUP decrypt payload.",
+      "local_copy": "repos/Scene-Collective-ps4-pup-decrypt"
+    },
+    {
+      "id": "S54",
+      "title": "idc/ps4-pup_decrypt",
+      "url": "https://github.com/idc/ps4-pup_decrypt",
+      "type": "release",
+      "publisher": "idc",
+      "notes": "Original PUP decrypt utility.",
+      "local_copy": "repos/idc-ps4-pup_decrypt"
+    },
+    {
+      "id": "S55",
+      "title": "idc/ps4-pup_unpack",
+      "url": "https://github.com/idc/ps4-pup_unpack",
+      "type": "release",
+      "publisher": "idc",
+      "notes": "Unpacker for decrypted PUP parts.",
+      "local_copy": "repos/idc-ps4-pup_unpack"
+    },
+    {
+      "id": "S56",
+      "title": "andy-man/ps4-pup-decrypt",
+      "url": "https://github.com/andy-man/ps4-pup-decrypt",
+      "type": "release",
+      "publisher": "andy-man",
+      "notes": "PUP decrypt fork used by PupDecrypt-PS4.",
+      "local_copy": "repos/andy-man-ps4-pup-decrypt"
+    },
+    {
+      "id": "S57",
+      "title": "ps3120/ps4-exploit-kpatches",
+      "url": "https://github.com/ps3120/ps4-exploit-kpatches",
+      "type": "release",
+      "publisher": "ps3120",
+      "notes": "Kernel patch shellcode per firmware including 1400.c; post-exploitation reference, not a KEX.",
+      "local_copy": "repos/ps3120-ps4-exploit-kpatches"
+    },
+    {
+      "id": "S58",
+      "title": "Mikadolebg/ps4-1400-research",
+      "url": "https://github.com/Mikadolebg/ps4-1400-research",
+      "type": "research",
+      "publisher": "Mikadolebg",
+      "notes": "Community 14.00 research: SSV userland chain, R/W/ROP/syscalls, measured gates, open leads.",
+      "local_copy": "repos/Mikadolebg-ps4-1400-research"
+    },
+    {
+      "id": "S59",
+      "title": "siongadev/PS4-14.00-Jailbreak-Research",
+      "url": "https://github.com/siongadev/PS4-14.00-Jailbreak-Research",
+      "type": "research",
+      "publisher": "siongadev",
+      "notes": "Community 14.00 browser research: R/W, native execution, module/syscall maps; no sandbox/kernel.",
+      "local_copy": "repos/siongadev-PS4-14.00-Jailbreak-Research"
+    },
+    {
+      "id": "S60",
+      "title": "adri22235/ps4-14-00-security-notes",
+      "url": "https://github.com/adri22235/ps4-14-00-security-notes",
+      "type": "research",
+      "publisher": "adri22235",
+      "notes": "14.00 dossier: WebKit gadgets/offsets, kernel offsets, CVE catalogue; some claims require verification.",
+      "local_copy": "repos/adri22235-ps4-14-00-security-notes"
+    },
+    {
+      "id": "S61",
+      "title": "ntfargo/CSSFontFace-Exploit",
+      "url": "https://github.com/ntfargo/CSSFontFace-Exploit",
+      "type": "release",
+      "publisher": "ntfargo / ufm42",
+      "notes": "WebKit CSSFontFace UAF; PS4 6.00-11.02 exploitable; not a 14.00 entry.",
+      "local_copy": "repos/ntfargo-CSSFontFace-Exploit"
+    },
+    {
+      "id": "S62",
+      "title": "OptiTronOffical/1350-webkit-test",
+      "url": "https://github.com/OptiTronOffical/1350-webkit-test",
+      "type": "community",
+      "publisher": "OptiTronOffical",
+      "notes": "13.50/13.52 WebKit harness with R/W primitive and disabled kernel stage; reference for porting.",
+      "local_copy": "repos/OptiTronOffical-1350-webkit-test"
+    },
+    {
+      "id": "S63",
+      "title": "NVD — CVE-2026-49415",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49415",
+      "type": "primary",
+      "publisher": "NIST",
+      "notes": "FreeBSD execve SUID TOCTOU; CVSS 8.8; PS4 applicability unproven.",
+      "local_copy": "data/cves-ps4-1400.json",
+      "published": "2026-08-19"
+    },
+    {
+      "id": "S64",
+      "title": "NVD — CVE-2026-101308",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-101308",
+      "type": "primary",
+      "publisher": "NIST",
+      "notes": "FreeBSD sound(4) sndbuf_resize/mmap UAF; CVSS 5.5; PS4 applicability unproven.",
+      "local_copy": "data/cves-ps4-1400.json",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "S65",
+      "title": "NVD — CVE-2026-58087",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58087",
+      "type": "primary",
+      "publisher": "NIST",
+      "notes": "FreeBSD semctl GETALL/SETALL sequence wrap OOB; CVSS 7.8; PS4 applicability unproven.",
+      "local_copy": "data/cves-ps4-1400.json",
+      "published": "2026-08-19"
+    },
+    {
+      "id": "S66",
+      "title": "NVD — CVE-2026-7270",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7270",
+      "type": "primary",
+      "publisher": "NIST",
+      "notes": "FreeBSD execve slab overflow; disputed/discarded for PS4 FreeBSD 9 baseline.",
+      "local_copy": "data/cves-ps4-1400.json",
+      "published": "2026-04-30"
+    },
+    {
+      "id": "S67",
+      "title": "TechPowerUp — PS5 firmware 14.10 reportedly jailbroken in private",
+      "url": "https://www.techpowerup.com/353929/ps5-firmware-14-10-reportedly-jailbroken-in-private-hypervisor-still-holding-up",
+      "type": "community",
+      "publisher": "TechPowerUp",
+      "notes": "Clarifies that 14.10 (26.06-14.10.00) is PS5, not PS4.",
+      "published": "2026-10-20"
+    },
+    {
+      "id": "S68",
+      "title": "PSDevWiki — WebKit Bugs",
+      "url": "https://www.psdevwiki.com/ps4/WebKit_Bugs",
+      "type": "wiki",
+      "publisher": "PSDevWiki",
+      "notes": "WebKit bug ranges/context used by 14.00 research; community-maintained."
+    },
+    {
+      "id": "S69",
+      "title": "Scene-Collective/ps4-payload-sdk",
+      "url": "https://github.com/Scene-Collective/ps4-payload-sdk",
+      "type": "release",
+      "publisher": "Scene-Collective",
+      "notes": "Payload SDK used by the PUP decrypt workflow.",
+      "local_copy": "repos/Scene-Collective-ps4-payload-sdk"
+    },
+    {
+      "id": "S70",
+      "title": "ps3120/FontFace-Lapse",
+      "url": "https://github.com/ps3120/FontFace-Lapse",
+      "type": "release",
+      "publisher": "ps3120",
+      "notes": "Legacy WebKit CSSFontFace + Lapse chain reference; not a 14.00 entry.",
+      "local_copy": "repos/ps3120-FontFace-Lapse"
+    },
+    {
+      "id": "S71",
+      "title": "YouTube — PS4/PS5 Jailbreak News: 14.00 JB teaser",
+      "url": "https://www.youtube.com/watch?v=i0O2o2ZhnTg",
+      "type": "community",
+      "publisher": "YouTube",
+      "notes": "Community report of a 14.00 teaser, Kstuff 13.60, 13.52 jailbreak; secondary, not reproducible."
+    },
+    {
+      "id": "S72",
+      "title": "Reddit — PS4 14.00 private jailbreak discussion",
+      "url": "https://www.reddit.com/r/PS4Mods/comments/1wyehee/ps4_1400/",
+      "type": "community",
+      "publisher": "r/PS4Mods",
+      "notes": "Community claim that a 14.00 jailbreak exists privately; no public release."
+    },
+    {
+      "id": "S73",
+      "title": "FreeBSD Security Advisory SA-26:71.sound",
+      "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-26:71.sound.asc",
+      "type": "primary",
+      "publisher": "FreeBSD Security Team",
+      "notes": "sound(4) sndbuf_resize/mmap UAF advisory; relevant context for CVE-2026-101308; PS4 applicability requires verification."
+    }
+  ]
+}

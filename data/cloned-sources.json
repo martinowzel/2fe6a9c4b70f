@@ -1,0 +1,618 @@
+{
+  "generated": "2026-10-30T07:16:41.067831+00:00",
+  "clone_method": "git clone --depth 1 (bdj-sdk additionally --recurse-submodules --shallow-submodules)",
+  "root": "sources/",
+  "repository_count": 41,
+  "gist_count": 1,
+  "repositories": [
+    {
+      "group": "repos",
+      "name": "Al-Azif-psfree-lapse",
+      "path": "sources/repos/Al-Azif-psfree-lapse",
+      "url": "https://github.com/Al-Azif/psfree-lapse.git",
+      "commit": "08ecf03",
+      "commit_full": "08ecf038c94aa99b56e46c9f32e2e486f83656b6",
+      "commit_date": "2025-09-05T11:41:15-07:00",
+      "size_bytes": 951375,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "CTurt-FreeDVDBoot",
+      "path": "sources/repos/CTurt-FreeDVDBoot",
+      "url": "https://github.com/CTurt/FreeDVDBoot.git",
+      "commit": "ba7fa5b",
+      "commit_full": "ba7fa5bbda2ccd19c0a1c37ab99115183a2a1b27",
+      "commit_date": "2020-09-06T19:10:55+01:00",
+      "size_bytes": 23745772,
+      "license_files": [],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "DefKorns-BD-JB-1252",
+      "path": "sources/repos/DefKorns-BD-JB-1252",
+      "url": "https://github.com/DefKorns/BD-JB-1252.git",
+      "commit": "dc9eecb",
+      "commit_full": "dc9eecb73e25dd32933b5eb33b5b1fc3534f973a",
+      "commit_date": "2025-12-13T14:43:46-01:00",
+      "size_bytes": 1243120,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "Poops ISO project for 12.50-12.52."
+    },
+    {
+      "group": "repos",
+      "name": "Gezine-BD-JB5",
+      "path": "sources/repos/Gezine-BD-JB5",
+      "url": "https://github.com/Gezine/BD-JB5.git",
+      "commit": "4c28ff2",
+      "commit_full": "4c28ff2d36cf9cade6763f2a8b801c2219e951f5",
+      "commit_date": "2026-08-05T08:36:40+09:00",
+      "size_bytes": 1426839,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "PS5-only; kept for separation and reference."
+    },
+    {
+      "group": "repos",
+      "name": "Gezine-Y2JB",
+      "path": "sources/repos/Gezine-Y2JB",
+      "url": "https://github.com/Gezine/Y2JB.git",
+      "commit": "79c1be4",
+      "commit_full": "79c1be475ef89d437ea52c6afd6dcb5e700d2875",
+      "commit_date": "2026-08-03T01:19:31+09:00",
+      "size_bytes": 775013,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "PS5-only YouTube-app entry; kept for separation."
+    },
+    {
+      "group": "repos",
+      "name": "GoldHEN-GoldHEN",
+      "path": "sources/repos/GoldHEN-GoldHEN",
+      "url": "https://github.com/GoldHEN/GoldHEN.git",
+      "commit": "3bb36e7",
+      "commit_full": "3bb36e7a9fdc3f38147f7c59c6cbc464c9ca395c",
+      "commit_date": "2026-02-10T19:04:55+01:00",
+      "size_bytes": 1631030,
+      "license_files": [],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "GoldHEN-henloader_lp",
+      "path": "sources/repos/GoldHEN-henloader_lp",
+      "url": "https://github.com/GoldHEN/henloader_lp.git",
+      "commit": "15f49b2",
+      "commit_full": "15f49b2e18b3f233dcbc9744b8aa527d54e1fb5d",
+      "commit_date": "2026-02-21T18:54:32+03:00",
+      "size_bytes": 24579302,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "HENloader LP AIO source; release assets are on GitHub, not all in the repo."
+    },
+    {
+      "group": "repos",
+      "name": "Mikadolebg-ps4-1400-research",
+      "path": "sources/repos/Mikadolebg-ps4-1400-research",
+      "url": "https://github.com/Mikadolebg/ps4-1400-research.git",
+      "commit": "022fb9a",
+      "commit_full": "022fb9a749df6995037fc628509c7a24562e0910",
+      "commit_date": "2026-10-27T01:15:03+01:00",
+      "size_bytes": 710587,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "14.00 SSV browser userland research: R/W/ROP/syscalls, measured gates, open leads. Community work; verify."
+    },
+    {
+      "group": "repos",
+      "name": "OptiTronOffical-1350-webkit-test",
+      "path": "sources/repos/OptiTronOffical-1350-webkit-test",
+      "url": "https://github.com/OptiTronOffical/1350-webkit-test.git",
+      "commit": "55ed614",
+      "commit_full": "55ed614c4143cd56fcff2f51315d7de40cc75138",
+      "commit_date": "2026-09-19T16:38:41+01:00",
+      "size_bytes": 126915,
+      "license_files": [],
+      "notes": "13.50/13.52 WebKit R/W harness; kernel stage disabled; reference for porting."
+    },
+    {
+      "group": "repos",
+      "name": "Scene-Collective-ps4-hen",
+      "path": "sources/repos/Scene-Collective-ps4-hen",
+      "url": "https://github.com/Scene-Collective/ps4-hen.git",
+      "commit": "d077fb4",
+      "commit_full": "d077fb4031cf0e089fb7a233cebeebcd1ed3c68e",
+      "commit_date": "2026-09-19T04:46:28-07:00",
+      "size_bytes": 750047,
+      "license_files": [],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "Scene-Collective-ps4-payload-sdk",
+      "path": "sources/repos/Scene-Collective-ps4-payload-sdk",
+      "url": "https://github.com/Scene-Collective/ps4-payload-sdk.git",
+      "commit": "b732641",
+      "commit_full": "b7326416c23ce14639e9180a24093bdc5eedb579",
+      "commit_date": "2026-09-19T01:31:20-07:00",
+      "size_bytes": 375152,
+      "license_files": [],
+      "notes": "Payload SDK used by the PUP decrypt workflow."
+    },
+    {
+      "group": "repos",
+      "name": "Scene-Collective-ps4-pup-decrypt",
+      "path": "sources/repos/Scene-Collective-ps4-pup-decrypt",
+      "url": "https://github.com/Scene-Collective/ps4-pup-decrypt.git",
+      "commit": "88cb3e6",
+      "commit_full": "88cb3e645dc1ad9e5a6a067181f0070fee011f55",
+      "commit_date": "2020-12-13T21:56:25-08:00",
+      "size_bytes": 109752,
+      "license_files": [],
+      "notes": "Upstream PUP decrypt payload."
+    },
+    {
+      "group": "repos",
+      "name": "TheOfficialFloW-Presentations",
+      "path": "sources/repos/TheOfficialFloW-Presentations",
+      "url": "https://github.com/TheOfficialFloW/Presentations.git",
+      "commit": "3f5dc05",
+      "commit_full": "3f5dc057d4c1cd1c15983239aaef7467f4d4ac9c",
+      "commit_date": "2025-05-30T02:46:13Z",
+      "size_bytes": 9840492,
+      "license_files": [],
+      "notes": "Includes 2022-hardwear-io-bd-jb.pdf (51 pages)."
+    },
+    {
+      "group": "repos",
+      "name": "TheOfficialFloW-bd-jb",
+      "path": "sources/repos/TheOfficialFloW-bd-jb",
+      "url": "https://github.com/TheOfficialFloW/bd-jb.git",
+      "commit": "8a31b64",
+      "commit_full": "8a31b642375f320681aebf5c1fbb00b06c321fb4",
+      "commit_date": "2026-03-23T09:27:14+01:00",
+      "size_bytes": 668449,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "Reference BD-JB source; no prebuilt ISO in the repo."
+    },
+    {
+      "group": "repos",
+      "name": "adri22235-ps4-14-00-security-notes",
+      "path": "sources/repos/adri22235-ps4-14-00-security-notes",
+      "url": "https://github.com/adri22235/ps4-14-00-security-notes.git",
+      "commit": "f6df77e",
+      "commit_full": "f6df77ecaa211825a4e79ad8c401d6fc4d51fb4b",
+      "commit_date": "2026-10-26T16:57:10+01:00",
+      "size_bytes": 82604,
+      "license_files": [],
+      "notes": "14.00 WebKit gadget/offset dossier and CVE catalogue; some claims conflict; verify."
+    },
+    {
+      "group": "repos",
+      "name": "adri22235-ps4-suid-scanner",
+      "path": "sources/repos/adri22235-ps4-suid-scanner",
+      "url": "https://github.com/adri22235/ps4-suid-scanner.git",
+      "commit": "659c949",
+      "commit_full": "659c949033a85c23945f976e5031f114c1fa9584",
+      "commit_date": "2026-10-23T20:54:18+02:00",
+      "size_bytes": 20396878,
+      "license_files": [],
+      "notes": "Research tool; Celsius/13.04 claims are not independently verified here."
+    },
+    {
+      "group": "repos",
+      "name": "andy-man-ps4-pup-decrypt",
+      "path": "sources/repos/andy-man-ps4-pup-decrypt",
+      "url": "https://github.com/andy-man/ps4-pup-decrypt.git",
+      "commit": "74c64c0",
+      "commit_full": "74c64c0e8726a7cd6c1de6a9d0b1b751f8fe9b97",
+      "commit_date": "2024-04-07T22:48:10+03:00",
+      "size_bytes": 118495,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "PUP decrypt fork used by PupDecrypt-PS4."
+    },
+    {
+      "group": "repos",
+      "name": "ayasns-BD-JB-1250",
+      "path": "sources/repos/ayasns-BD-JB-1250",
+      "url": "https://github.com/ayasns/BD-JB-1250.git",
+      "commit": "fe00d06",
+      "commit_full": "fe00d062a18583351e7b9349710b4b8ade365325",
+      "commit_date": "2025-08-25T17:26:04+09:00",
+      "size_bytes": 507512,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "hammer-83-ps5-jar-loader",
+      "path": "sources/repos/hammer-83-ps5-jar-loader",
+      "url": "https://github.com/hammer-83/ps5-jar-loader.git",
+      "commit": "8034177",
+      "commit_full": "8034177e40f5f36a176879769de255ef73a0862f",
+      "commit_date": "2025-03-09T16:17:48-04:00",
+      "size_bytes": 5603674,
+      "license_files": [],
+      "notes": "PS5 reference implementation."
+    },
+    {
+      "group": "repos",
+      "name": "iHaiDeeZ-PupDecrypt-PS4",
+      "path": "sources/repos/iHaiDeeZ-PupDecrypt-PS4",
+      "url": "https://github.com/iHaiDeeZ/PupDecrypt-PS4.git",
+      "commit": "5dfc802",
+      "commit_full": "5dfc802288eee0877bcca082e9624f15a9227ed4",
+      "commit_date": "2026-10-30T03:22:12+03:00",
+      "size_bytes": 107292,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "14.00 PUP decrypt on 13.52 GoldHEN; Windows/MSYS2 workflow; tested 14.00 recovery PUP."
+    },
+    {
+      "group": "repos",
+      "name": "iMrDJAi-laps3c0re",
+      "path": "sources/repos/iMrDJAi-laps3c0re",
+      "url": "https://github.com/iMrDJAi/laps3c0re.git",
+      "commit": "cc62e04",
+      "commit_full": "cc62e04fb63912945be63bbf7e1847f806da23e5",
+      "commit_date": "2025-12-24T22:40:30+01:00",
+      "size_bytes": 9459117,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "iaceene-HENloader_Source",
+      "path": "sources/repos/iaceene-HENloader_Source",
+      "url": "https://github.com/iaceene/HENloader_Source.git",
+      "commit": "a42fef8",
+      "commit_full": "a42fef8c980e4e23b38f2f4d66dcd5f7e87400dd",
+      "commit_date": "2025-11-25T12:58:38+01:00",
+      "size_bytes": 233961,
+      "license_files": [],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "idc-ps4-pup_decrypt",
+      "path": "sources/repos/idc-ps4-pup_decrypt",
+      "url": "https://github.com/idc/ps4-pup_decrypt.git",
+      "commit": "7998d7a",
+      "commit_full": "7998d7a5c17a668201761f8a70bf468c0d963321",
+      "commit_date": "2017-11-24T14:47:06-06:00",
+      "size_bytes": 62373,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "Original PUP decrypt utility."
+    },
+    {
+      "group": "repos",
+      "name": "idc-ps4-pup_unpack",
+      "path": "sources/repos/idc-ps4-pup_unpack",
+      "url": "https://github.com/idc/ps4-pup_unpack.git",
+      "commit": "a2ea44b",
+      "commit_full": "a2ea44b7886551bfb103c60f3477f2999a3d1122",
+      "commit_date": "2017-12-12T17:59:32-06:00",
+      "size_bytes": 61781,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "Unpacker for decrypted PUP parts."
+    },
+    {
+      "group": "repos",
+      "name": "john-tornblom-bdj-sdk",
+      "path": "sources/repos/john-tornblom-bdj-sdk",
+      "url": "https://github.com/john-tornblom/bdj-sdk.git",
+      "commit": "9c48049",
+      "commit_full": "9c48049b920514388952ea89cda13fc940ff2183",
+      "commit_date": "2025-01-12T16:39:16+01:00",
+      "size_bytes": 28250590,
+      "license_files": [],
+      "notes": "Cloned with shallow submodules; includes makefs/JDK build tooling."
+    },
+    {
+      "group": "repos",
+      "name": "kimariin-BlueLoader",
+      "path": "sources/repos/kimariin-BlueLoader",
+      "url": "https://github.com/kimariin/BlueLoader.git",
+      "commit": "5b7d73b",
+      "commit_full": "5b7d73b67b52944d5dc61df0f7738d23f10bb7d3",
+      "commit_date": "2025-08-13T03:35:42-04:00",
+      "size_bytes": 432965002,
+      "license_files": [
+        "LICENSE",
+        "LICENSE.AGPLv3"
+      ],
+      "notes": "Large repository due to bundled Linux x64/aarch64 JVMs; project marked obsolete upstream."
+    },
+    {
+      "group": "repos",
+      "name": "kmeps4-PSFree",
+      "path": "sources/repos/kmeps4-PSFree",
+      "url": "https://github.com/kmeps4/PSFree.git",
+      "commit": "368d82a",
+      "commit_full": "368d82aa40d3017c220757ce315761adb5f06678",
+      "commit_date": "2026-05-30T22:15:46-06:00",
+      "size_bytes": 1452733,
+      "license_files": [
+        "LICENSE",
+        "COPYING"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "ntfargo-CSSFontFace-Exploit",
+      "path": "sources/repos/ntfargo-CSSFontFace-Exploit",
+      "url": "https://github.com/ntfargo/CSSFontFace-Exploit.git",
+      "commit": "221baa6",
+      "commit_full": "221baa6e7349b96a6fd299808a25a4178e47741c",
+      "commit_date": "2026-07-27T22:05:37+04:00",
+      "size_bytes": 345922,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "Legacy WebKit CSSFontFace exploit; PS4 6.00-11.02 exploitable, not a 14.00 entry."
+    },
+    {
+      "group": "repos",
+      "name": "ps3120-BD-JB-1250",
+      "path": "sources/repos/ps3120-BD-JB-1250",
+      "url": "https://github.com/ps3120/BD-JB-1250.git",
+      "commit": "5553700",
+      "commit_full": "555370062f4ab6382ea1b907a0cb7ea57180ffd5",
+      "commit_date": "2026-05-30T13:43:55+02:00",
+      "size_bytes": 615579,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "ps3120-CSSFontFace-Exploit",
+      "path": "sources/repos/ps3120-CSSFontFace-Exploit",
+      "url": "https://github.com/ps3120/CSSFontFace-Exploit.git",
+      "commit": "33650b3",
+      "commit_full": "33650b33984188cf76229251caea7d1f450c1455",
+      "commit_date": "2026-07-04T18:52:50+02:00",
+      "size_bytes": 343654,
+      "license_files": [],
+      "notes": "Fork of the CSSFontFace WebKit exploit (legacy)."
+    },
+    {
+      "group": "repos",
+      "name": "ps3120-FontFace-Lapse",
+      "path": "sources/repos/ps3120-FontFace-Lapse",
+      "url": "https://github.com/ps3120/FontFace-Lapse.git",
+      "commit": "8c9d754",
+      "commit_full": "8c9d7542181a7c61c78f1c3d0c6c89b5284ddcc3",
+      "commit_date": "2026-02-10T15:22:18+01:00",
+      "size_bytes": 1488434,
+      "license_files": [],
+      "notes": "Legacy WebKit + Lapse chain reference; not a 14.00 entry."
+    },
+    {
+      "group": "repos",
+      "name": "ps3120-henloader_lp",
+      "path": "sources/repos/ps3120-henloader_lp",
+      "url": "https://github.com/ps3120/henloader_lp.git",
+      "commit": "0b91bea",
+      "commit_full": "0b91beae7cd9025fdc690a7fb8ce5be59d36d213",
+      "commit_date": "2026-02-25T15:14:13+01:00",
+      "size_bytes": 24035351,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "HENloader fork/update."
+    },
+    {
+      "group": "repos",
+      "name": "ps3120-ps3120.github.io",
+      "path": "sources/repos/ps3120-ps3120.github.io",
+      "url": "https://github.com/ps3120/ps3120.github.io.git",
+      "commit": "81b389d",
+      "commit_full": "81b389d64089e71b01fcd21131555e3c6c14ef06",
+      "commit_date": "2026-09-30T23:29:27+02:00",
+      "size_bytes": 51563455,
+      "license_files": [],
+      "notes": "Contains bdj1304.iso (BD-JB-13.04) and related web assets."
+    },
+    {
+      "group": "repos",
+      "name": "ps3120-ps4-exploit-kpatches",
+      "path": "sources/repos/ps3120-ps4-exploit-kpatches",
+      "url": "https://github.com/ps3120/ps4-exploit-kpatches.git",
+      "commit": "c89c6f9",
+      "commit_full": "c89c6f90b94e6c392750f85cbdb2bf0eb38d8a66",
+      "commit_date": "2026-09-20T21:22:19-07:00",
+      "size_bytes": 254373,
+      "license_files": [],
+      "notes": "Kernel patch shellcode per firmware including 1400.c; post-exploitation reference, not a KEX."
+    },
+    {
+      "group": "repos",
+      "name": "ps3120-ps4-pup-decrypt",
+      "path": "sources/repos/ps3120-ps4-pup-decrypt",
+      "url": "https://github.com/ps3120/ps4-pup-decrypt.git",
+      "commit": "74c64c0",
+      "commit_full": "74c64c0e8726a7cd6c1de6a9d0b1b751f8fe9b97",
+      "commit_date": "2024-04-07T22:48:10+03:00",
+      "size_bytes": 118487,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": "PUP decrypt payload; 14.00 offsets in the ecosystem."
+    },
+    {
+      "group": "repos",
+      "name": "ps4-payload-dev-sdk",
+      "path": "sources/repos/ps4-payload-dev-sdk",
+      "url": "https://github.com/ps4-payload-dev/sdk.git",
+      "commit": "573b4a0",
+      "commit_full": "573b4a0d0d5fa8695cfeee5f5e2f0447c550035d",
+      "commit_date": "2026-09-22T18:44:22+02:00",
+      "size_bytes": 17845706,
+      "license_files": [],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "ps5-payload-dev-sdk",
+      "path": "sources/repos/ps5-payload-dev-sdk",
+      "url": "https://github.com/ps5-payload-dev/sdk.git",
+      "commit": "a7685ce",
+      "commit_full": "a7685ce8e97ce1f8a4f38253a41d54241c9124f1",
+      "commit_date": "2026-10-20T18:54:22+02:00",
+      "size_bytes": 21392159,
+      "license_files": [
+        "LICENSE"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "shahrilnet-remote_lua_loader",
+      "path": "sources/repos/shahrilnet-remote_lua_loader",
+      "url": "https://github.com/shahrilnet/remote_lua_loader.git",
+      "commit": "7c2840e",
+      "commit_full": "7c2840e47506f258fc815533d5f7ed7c842cbc3c",
+      "commit_date": "2026-06-20T15:00:28Z",
+      "size_bytes": 1969745,
+      "license_files": [],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "siongadev-PS4-14.00-Jailbreak-Research",
+      "path": "sources/repos/siongadev-PS4-14.00-Jailbreak-Research",
+      "url": "https://github.com/siongadev/PS4-14.00-Jailbreak-Research.git",
+      "commit": "81698f4",
+      "commit_full": "81698f4978943762e22216586b30c2588050aab0",
+      "commit_date": "2026-10-26T04:39:53-05:00",
+      "size_bytes": 181917013,
+      "license_files": [],
+      "notes": "14.00 browser R/W/native execution evidence; no sandbox escape or kernel primitive; large evidence archive."
+    },
+    {
+      "group": "repos",
+      "name": "sleirsgoevy-bdj-doom",
+      "path": "sources/repos/sleirsgoevy-bdj-doom",
+      "url": "https://github.com/sleirsgoevy/bdj-doom.git",
+      "commit": "bae1824",
+      "commit_full": "bae182433c193ed702d63e4bce790ea56ba0bfdc",
+      "commit_date": "2020-04-08T16:40:59+03:00",
+      "size_bytes": 7739302,
+      "license_files": [],
+      "notes": ""
+    },
+    {
+      "group": "repos",
+      "name": "sleirsgoevy-ps4jb-payloads",
+      "path": "sources/repos/sleirsgoevy-ps4jb-payloads",
+      "url": "https://github.com/sleirsgoevy/ps4jb-payloads.git",
+      "commit": "2b60b90",
+      "commit_full": "2b60b9097337540e0f6537e308f9d7bbcfcb67f2",
+      "commit_date": "2026-04-28T18:39:59+03:00",
+      "size_bytes": 30964,
+      "license_files": [],
+      "notes": ""
+    }
+  ],
+  "gists": [
+    {
+      "group": "gists",
+      "name": "poopsploit",
+      "path": "sources/gists/poopsploit",
+      "url": "https://gist.github.com/7174351201b5260d7780780f4059bebf.git",
+      "commit": "b1a7477",
+      "commit_full": "b1a7477c719cb11239d19425ff55d68b8f5409e3",
+      "commit_date": "2025-11-02T13:49:57+01:00",
+      "size_bytes": 68119,
+      "license_files": [],
+      "notes": ""
+    }
+  ],
+  "web_snapshots": [
+    {
+      "file": "sources/web/consolemods-bd-jb.html",
+      "size_bytes": 35798,
+      "kind": "html",
+      "status": "ok (HTML)"
+    },
+    {
+      "file": "sources/web/consolemods-exploit-chart.html",
+      "size_bytes": 44056,
+      "kind": "html",
+      "status": "ok (HTML)"
+    },
+    {
+      "file": "sources/web/hardwear-2022-bd-jb.pdf",
+      "size_bytes": 454986,
+      "kind": "pdf",
+      "status": "ok (PDF)"
+    },
+    {
+      "file": "sources/web/henloader-guide.html",
+      "size_bytes": 29375,
+      "kind": "html",
+      "status": "ok (HTML)"
+    },
+    {
+      "file": "sources/web/psdevwiki-vulnerabilities.html",
+      "size_bytes": 762127,
+      "kind": "html",
+      "status": "ok (HTML)"
+    },
+    {
+      "file": "sources/web/psdevwiki-vulnerabilities.md",
+      "size_bytes": 422968,
+      "kind": "markdown",
+      "status": "ok (readable text snapshot)"
+    },
+    {
+      "file": "sources/web/sony-ps4-system-software.html",
+      "size_bytes": 163840,
+      "kind": "html",
+      "status": "ok (HTML)"
+    },
+    {
+      "file": "sources/web/sony-ps4-webkit-oss.html",
+      "size_bytes": 145089,
+      "kind": "html",
+      "status": "ok (HTML)"
+    }
+  ],
+  "not_cloned": [
+    "HackerOne reports (JavaScript; links preserved)",
+    "Reddit threads (blocked from automated access; links preserved)",
+    "X/Twitter posts (blocked/JS; links preserved)",
+    "YouTube videos (links preserved)",
+    "ImgBurn/K3b websites (links preserved)",
+    "GitHub release binaries/assets (not mirrored; use official release pages)",
+    "Gezine/BD-JB-1250 original repository (unavailable/private; active forks ps3120/BD-JB-1250 and ayasns/BD-JB-1250 are cloned)",
+    "NVD CVE pages (Cloudflare; structured JSON is saved in data/cves-ps4-1400.json)",
+    "S51 MP1ST article snapshot (Cloudflare; link preserved)"
+  ]
+}
